@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpita Ribu Ravindran - Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8A2BE2',secondary:'#E6E6FA'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Manrope', sans-serif;
+}
+.gradient-text {
+background: linear-gradient(90deg, #8A2BE2, #DA70D6);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+.glassmorphism {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+.holographic-border {
+position: relative;
+overflow: hidden;
+}
+.holographic-border::before {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+right: -2px;
+bottom: -2px;
+background: linear-gradient(45deg, #8A2BE2, #DA70D6, #9370DB, #8A2BE2);
+background-size: 400% 400%;
+z-index: -1;
+border-radius: inherit;
+animation: border-animation 3s ease infinite;
+}
+@keyframes border-animation {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.orb-container {
+  z-index: 10;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.orb {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 30%, rgba(218, 112, 214, 0.8), rgba(138, 43, 226, 0.6));
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(138, 43, 226, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.4);
+  transform-style: preserve-3d;
+  animation: orb-rotate 20s linear infinite;
+}
+.orb::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+  filter: blur(5px);
+  opacity: 0.7;
+  animation: rotate 8s linear infinite;
+}
+.orb::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.8), transparent 60%);
+  opacity: 0.4;
+  filter: blur(5px);
+}
+.orb-glow {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+.orb-rings {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(138, 43, 226, 0.2);
+  transform-style: preserve-3d;
+}
+.ring-1 {
+  width: 380px;
+  height: 380px;
+  top: 60px;
+  left: 60px;
+  animation: ring-rotate 15s linear infinite;
+}
+.ring-2 {
+  width: 420px;
+  height: 420px;
+  top: 40px;
+  left: 40px;
+  animation: ring-rotate 20s linear infinite reverse;
+}
+.ring-3 {
+  width: 460px;
+  height: 460px;
+  top: 20px;
+  left: 20px;
+  animation: ring-rotate 25s linear infinite;
+}
+.ripple-bg {
+  overflow: hidden;
+}
+.ripple-effect {
+  background: transparent;
+  z-index: 5;
+}
+@keyframes orb-rotate {
+  0% { transform: rotate3d(1, 1, 1, 0deg); }
+  100% { transform: rotate3d(1, 1, 1, 360deg); }
+}
+@keyframes ring-rotate {
+  0% { transform: rotateX(70deg) rotateY(20deg) rotateZ(0deg); }
+  100% { transform: rotateX(70deg) rotateY(20deg) rotateZ(360deg); }
+}
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(0.9); opacity: 0.5; }
+}
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg) translateZ(20px); }
+  50% { transform: translateY(-20px) rotate(5deg) translateZ(40px); }
+  100% { transform: translateY(0) rotate(0deg) translateZ(20px); }
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.glow {
+filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
+}
+.card-hover {
+transition: all 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+}
+input, textarea {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.2);
+color: #333;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: rgba(138, 43, 226, 0.5);
+box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+}
+.custom-checkbox {
+appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #8A2BE2;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+outline: none;
+}
+.custom-checkbox:checked {
+background-color: #8A2BE2;
+}
+.custom-checkbox:checked::after {
+content: '✓';
+position: absolute;
+color: white;
+font-size: 14px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #8A2BE2;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+.scroll-reveal {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s ease;
+}
+.scroll-reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+.particles {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+pointer-events: none;
+}
+/* Project card 3D effect */
+.project-card {
+perspective: 1000px;
+transform-style: preserve-3d;
+}
+.project-card:hover .project-image-container {
+transform: rotateY(10deg) rotateX(5deg);
+}
+.project-image-container {
+transform-style: preserve-3d;
+transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.project-image {
+backface-visibility: hidden;
+transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.project-card:hover .project-image {
+opacity: 0.8;
+}
+.project-animation {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 10;
+opacity: 0;
+transition: opacity 0.4s ease;
+pointer-events: none;
+}
+.project-card:hover .project-animation {
+opacity: 1;
+}
+/* Empath AI Animation */
+.brain-scan {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 120px;
+height: 120px;
+border-radius: 50%;
+background: radial-gradient(circle at center, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.6));
+box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+animation: pulse 2s infinite;
+}
+.emotion-dots {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 150px;
+height: 150px;
+}
+.emotion-dot {
+position: absolute;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: rgba(218, 112, 214, 0.8);
+animation: emotionPulse 3s infinite;
+}
+.emotion-dot:nth-child(1) {
+top: 20%;
+left: 30%;
+animation-delay: 0s;
+}
+.emotion-dot:nth-child(2) {
+top: 70%;
+left: 20%;
+animation-delay: 0.5s;
+}
+.emotion-dot:nth-child(3) {
+top: 30%;
+left: 80%;
+animation-delay: 1s;
+}
+.emotion-dot:nth-child(4) {
+top: 60%;
+left: 70%;
+animation-delay: 1.5s;
+}
+@keyframes pulse {
+0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+50% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+}
+@keyframes emotionPulse {
+0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(218, 112, 214, 0.7); }
+50% { transform: scale(1.5); box-shadow: 0 0 10px 5px rgba(218, 112, 214, 0.3); }
+100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(218, 112, 214, 0.7); }
+}
+/* Hydrocharger Animation */
+.water-flow {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+}
+.water-drop {
+position: absolute;
+width: 10px;
+height: 20px;
+background-color: rgba(64, 164, 223, 0.7);
+border-radius: 50%;
+animation: waterDrop 2s linear infinite;
+}
+.water-drop:nth-child(1) {
+left: 20%;
+top: -20px;
+animation-delay: 0s;
+}
+.water-drop:nth-child(2) {
+left: 40%;
+top: -20px;
+animation-delay: 0.4s;
+}
+.water-drop:nth-child(3) {
+left: 60%;
+top: -20px;
+animation-delay: 0.8s;
+}
+.water-drop:nth-child(4) {
+left: 80%;
+top: -20px;
+animation-delay: 1.2s;
+}
+.water-drop:nth-child(5) {
+left: 30%;
+top: -20px;
+animation-delay: 1.6s;
+}
+.turbine-wheel {
+position: absolute;
+bottom: 30%;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 60px;
+border-radius: 50%;
+background: conic-gradient(
+rgba(138, 43, 226, 0.8) 0deg,
+rgba(138, 43, 226, 0.2) 90deg,
+rgba(138, 43, 226, 0.8) 180deg,
+rgba(138, 43, 226, 0.2) 270deg,
+rgba(138, 43, 226, 0.8) 360deg
+);
+animation: spin 3s linear infinite;
+box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+@keyframes waterDrop {
+0% { transform: translateY(0) scale(1); opacity: 0.7; }
+100% { transform: translateY(200px) scale(0.5); opacity: 0; }
+}
+@keyframes spin {
+0% { transform: translateX(-50%) rotate(0deg); }
+100% { transform: translateX(-50%) rotate(360deg); }
+}
+/* Hertz EV Animation */
+.car-container {
+position: absolute;
+bottom: 30%;
+left: 20%;
+width: 100px;
+height: 40px;
+animation: carMove 4s linear infinite;
+}
+.car-body {
+position: absolute;
+width: 100%;
+height: 25px;
+background-color: rgba(138, 43, 226, 0.7);
+border-radius: 10px 20px 0 0;
+top: 0;
+}
+.car-wheel {
+position: absolute;
+width: 15px;
+height: 15px;
+background-color: rgba(50, 50, 50, 0.8);
+border-radius: 50%;
+bottom: 0;
+animation: wheelRotate 1s linear infinite;
+}
+.car-wheel-front {
+right: 15px;
+}
+.car-wheel-back {
+left: 15px;
+}
+.charging-waves {
+position: absolute;
+bottom: 40%;
+right: 30%;
+width: 60px;
+height: 60px;
+}
+.charging-wave {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background-color: rgba(138, 43, 226, 0.2);
+animation: chargingWave 2s infinite;
+}
+.charging-wave:nth-child(2) {
+animation-delay: 0.5s;
+}
+.charging-wave:nth-child(3) {
+animation-delay: 1s;
+}
+@keyframes carMove {
+0% { transform: translateX(0); }
+50% { transform: translateX(150px); }
+100% { transform: translateX(0); }
+}
+@keyframes wheelRotate {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@keyframes chargingWave {
+0% { width: 20px; height: 20px; opacity: 0.8; }
+100% { width: 60px; height: 60px; opacity: 0; }
+}
+/* Smart BMS Animation */
+.battery-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 80px;
+height: 40px;
+}
+.battery-body {
+position: absolute;
+width: 80px;
+height: 40px;
+background-color: rgba(50, 50, 50, 0.2);
+border-radius: 5px;
+overflow: hidden;
+}
+.battery-level {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 0%;
+background: linear-gradient(to top, rgba(138, 43, 226, 0.8), rgba(218, 112, 214, 0.8));
+animation: batteryCharge 3s infinite;
+}
+.battery-cap {
+position: absolute;
+width: 10px;
+height: 20px;
+background-color: rgba(50, 50, 50, 0.2);
+right: -10px;
+top: 10px;
+border-radius: 0 5px 5px 0;
+}
+.battery-charge-indicator {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.charge-bolt {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 20px;
+height: 30px;
+background-color: rgba(255, 255, 255, 0.9);
+clip-path: polygon(40% 0%, 100% 0%, 60% 50%, 100% 50%, 0% 100%, 40% 50%, 0% 50%);
+animation: boltFlash 1s infinite;
+}
+@keyframes batteryCharge {
+0% { height: 10%; }
+50% { height: 90%; }
+100% { height: 10%; }
+}
+@keyframes boltFlash {
+0% { opacity: 0.3; }
+50% { opacity: 1; }
+100% { opacity: 0.3; }
+}
+/* VueLamp Animation */
+.lamp-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100px;
+height: 120px;
+}
+.lamp-base {
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 40px;
+height: 10px;
+background-color: rgba(50, 50, 50, 0.7);
+border-radius: 5px;
+}
+.lamp-neck {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+width: 8px;
+height: 60px;
+background-color: rgba(50, 50, 50, 0.7);
+}
+.lamp-head {
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 50px;
+height: 30px;
+background-color: rgba(50, 50, 50, 0.7);
+border-radius: 50% 50% 0 0;
+}
+.lamp-light {
+position: absolute;
+top: 30px;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 80px;
+background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%);
+border-radius: 50%;
+opacity: 0;
+animation: lampLight 3s infinite;
+}
+@keyframes lampLight {
+0% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+50% { opacity: 0.8; transform: translateX(-50%) scale(1.2); }
+100% { opacity: 0; transform: translateX(-50%) scale(0.8); }
+}
+</style>
+</head>
+<body class="bg-white text-gray-800">
+<header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-md shadow-sm">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] gradient-text">Arpita</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#about" class="font-medium hover:text-primary transition-colors">About</a>
+<a href="#projects" class="font-medium hover:text-primary transition-colors">Projects</a>
+<a href="#vision" class="font-medium hover:text-primary transition-colors">Vision</a>
+<a href="#achievements" class="font-medium hover:text-primary transition-colors">Achievements</a>
+<a href="#contact" class="font-medium hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</header>
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+<div class="absolute inset-0 ripple-bg" style="background: linear-gradient(135deg, #f5f7fa 0%, #e6e9f0 100%);"></div>
+<div class="orb-container absolute inset-0 flex items-center justify-center pointer-events-none">
+  <div class="orb z-10 animate-float"></div>
+  <div class="orb-glow absolute"></div>
+  <div class="orb-rings absolute">
+    <div class="orb-ring ring-1"></div>
+    <div class="orb-ring ring-2"></div>
+    <div class="orb-ring ring-3"></div>
+  </div>
+</div>
+<div class="particles"></div>
+<div class="container mx-auto px-6 z-20 w-full">
+<div class="flex flex-col items-center text-center">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text leading-tight max-w-4xl animate-fade-in">
+Building the future through innovation and empathy
+</h1>
+<p class="text-lg md:text-xl text-gray-600 mb-8 tracking-wide animate-fade-in-delay">
+<span>Entrepreneur</span>
+<span class="mx-2 text-primary">|</span>
+<span>Vision Architect</span>
+<span class="mx-2 text-primary">|</span>
+<span>Innovator</span>
+</p>
+<div class="flex space-x-4 mt-8 animate-fade-in-delay-2">
+<a href="#about" class="px-6 py-3 bg-primary text-white font-medium !rounded-button shadow-lg hover:shadow-xl transition-all hover:scale-105">
+Discover My Work
+</a>
+<a href="#contact" class="px-6 py-3 border border-primary text-primary font-medium !rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap hover:scale-105">
+Connect With Me
+</a>
+</div>
+</div>
+</div>
+<div class="ripple-effect absolute inset-0 pointer-events-none"></div>
+</section>
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-2/5">
+<div class="relative holographic-border rounded-2xl overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/9f677e979bac9657729c24bee3037c6b.jpg" alt="Dion Power Solutions Logo" class="w-full h-auto rounded-2xl">
+</div>
+</div>
+<div class="md:w-3/5">
+<h2 class="text-3xl font-bold mb-6 flex items-center">
+<span class="w-10 h-10 flex items-center justify-center text-primary mr-2">
+<i class="ri-user-heart-line text-xl"></i>
+</span>
+<span>About Me</span>
+</h2>
+<p class="text-gray-700 mb-4 leading-relaxed">
+Hi, I'm Arpita — a tech entrepreneur driven by vision, impact, and empathy. While I don't love coding, I excel at building ideas into reality, leading teams, and creating solutions that actually matter.
+</p>
+<p class="text-gray-700 mb-4 leading-relaxed">
+I specialize in shaping high-impact projects across AI, EV systems, and sustainable tech. From coordinating government-led innovation efforts to mentoring startup founders at GCU's Incubation Cell, I've always worked at the intersection of people, purpose, and progress.
+</p>
+<p class="text-gray-700 mb-4 leading-relaxed">
+Currently, I serve as a Junior Analyst at Dion Power Solutions LLP, where I'm working on the Smart BMS project for EVs. I also built Empath AI, a mental health platform combining ML with facial emotion recognition, aligned with India's wellness goals.
+</p>
+<p class="text-gray-700 leading-relaxed">
+I believe innovation should be <span class="font-semibold text-primary">inclusive</span>, <span class="font-semibold text-primary">intuitive</span>, and <span class="font-semibold text-primary">intentional</span>. And that's what I bring to the table — not just code, but clarity.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="projects" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-12 text-center flex items-center justify-center">
+<span class="w-10 h-10 flex items-center justify-center text-primary mr-2">
+<i class="ri-lightbulb-flash-line text-xl"></i>
+</span>
+<span>Projects</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="glassmorphism rounded-lg overflow-hidden shadow-lg card-hover scroll-reveal project-card" data-project="empath">
+<div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 relative project-image-container">
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/f94180585e11b26e93dd4b5bc169bf1b.jpg" alt="Empath AI" class="w-full h-full object-cover object-top project-image">
+</div>
+<div class="project-animation empath-animation">
+<div class="brain-scan"></div>
+<div class="emotion-dots">
+<div class="emotion-dot"></div>
+<div class="emotion-dot"></div>
+<div class="emotion-dot"></div>
+<div class="emotion-dot"></div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gradient-text">Empath AI</h3>
+<p class="text-gray-600 mb-4">
+A mental health platform using facial recognition & machine learning to assess emotions. Built for psychologists and aligned with NITI Aayog's mental health initiatives.
+</p>
+<div class="flex items-center text-sm text-primary">
+<span class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-mental-health-line"></i>
+</span>
+<span>Improved diagnosis accuracy by 42%</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glassmorphism rounded-lg overflow-hidden shadow-lg card-hover scroll-reveal project-card" data-project="hydrocharger">
+<div class="h-48 bg-gradient-to-r from-blue-400 to-teal-500 relative project-image-container">
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/8ecb8dd96ec049440583f6e4c3063e67.jpg" alt="Hydrocharger" class="w-full h-full object-cover object-top project-image">
+</div>
+<div class="project-animation hydrocharger-animation">
+<div class="water-flow">
+<div class="water-drop"></div>
+<div class="water-drop"></div>
+<div class="water-drop"></div>
+<div class="water-drop"></div>
+<div class="water-drop"></div>
+</div>
+<div class="turbine-wheel"></div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gradient-text">Hydrocharger</h3>
+<p class="text-gray-600 mb-4">
+A compact, 15W hydro-turbine system for rural low-flow water streams. Powers homes in underserved areas.
+</p>
+<div class="flex items-center text-sm text-primary">
+<span class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-water-flash-line"></i>
+</span>
+<span>Empowered 50+ rural households</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="glassmorphism rounded-lg overflow-hidden shadow-lg card-hover scroll-reveal project-card" data-project="hertz">
+<div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-500 relative project-image-container">
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/7b2f787ac2fea98a0c92c049ea608267.jpg" alt="Hertz EV" class="w-full h-full object-cover object-top project-image">
+</div>
+<div class="project-animation hertz-animation">
+<div class="car-container">
+<div class="car-body"></div>
+<div class="car-wheel car-wheel-front"></div>
+<div class="car-wheel car-wheel-back"></div>
+</div>
+<div class="charging-waves">
+<div class="charging-wave"></div>
+<div class="charging-wave"></div>
+<div class="charging-wave"></div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gradient-text">Hertz EV</h3>
+<p class="text-gray-600 mb-4">
+Wireless electric vehicle charging prototype with 60% transmission efficiency. Finalist at Manthan 2024.
+</p>
+<div class="flex items-center text-sm text-primary">
+<span class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-charging-pile-line"></i>
+</span>
+<span>Reduced charging time by 35%</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="glassmorphism rounded-lg overflow-hidden shadow-lg card-hover scroll-reveal project-card" data-project="bms">
+<div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative project-image-container">
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/7864977e0f9134dd559e48d35f8636cb.jpg" alt="Smart BMS" class="w-full h-full object-cover object-top project-image">
+</div>
+<div class="project-animation bms-animation">
+<div class="battery-container">
+<div class="battery-body">
+<div class="battery-level"></div>
+</div>
+<div class="battery-cap"></div>
+</div>
+<div class="battery-charge-indicator">
+<div class="charge-bolt"></div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gradient-text">Smart BMS</h3>
+<p class="text-gray-600 mb-4">
+Ongoing project at Dion Power Solutions - real-time battery management system for EVs.
+</p>
+<div class="flex items-center text-sm text-primary">
+<span class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-battery-2-charge-line"></i>
+</span>
+<span>Optimizing battery performance and lifespan</span>
+</div>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="glassmorphism rounded-lg overflow-hidden shadow-lg card-hover scroll-reveal project-card" data-project="vuelamp">
+<div class="h-48 bg-gradient-to-r from-teal-400 to-blue-500 relative project-image-container">
+<div class="absolute inset-0 flex items-center justify-center">
+<img src="https://public.readdy.ai/ai/img_res/3ef1c51dae500c7753134539b56df1cc.jpg" alt="VueLamp" class="w-full h-full object-cover object-top project-image">
+</div>
+<div class="project-animation vuelamp-animation">
+<div class="lamp-container">
+<div class="lamp-base"></div>
+<div class="lamp-neck"></div>
+<div class="lamp-head"></div>
+<div class="lamp-light"></div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2 gradient-text">VueLamp</h3>
+<p class="text-gray-600 mb-4">
+A sophisticated online platform transforming home design with intuitive interface and cutting-edge visualization tools.
+</p>
+<div class="flex items-center text-sm text-primary">
+<span class="w-6 h-6 flex items-center justify-center mr-1">
+<i class="ri-home-gear-line"></i>
+</span>
+<span>Empowering homeowners with personalization</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="vision" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-12 text-center flex items-center justify-center">
+<span class="w-10 h-10 flex items-center justify-center text-primary mr-2">
+<i class="ri-eye-line text-xl"></i>
+</span>
+<span>Vision & Mission</span>
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="holographic-border rounded-lg p-8 text-center card-hover scroll-reveal bg-white bg-opacity-90">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 text-3xl text-primary">
+<i class="ri-lightbulb-flash-fill"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4 gradient-text">"Tech with empathy."</h3>
+<p class="text-gray-600">
+Technology should understand human needs and solve real problems, not just showcase technical prowess.
+</p>
+</div>
+<div class="holographic-border rounded-lg p-8 text-center card-hover scroll-reveal bg-white bg-opacity-90">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 text-3xl text-primary">
+<i class="ri-flashlight-fill"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4 gradient-text">"Lead what you build. Build what matters."</h3>
+<p class="text-gray-600">
+True innovation comes from leadership with purpose, not just technical implementation.
+</p>
+</div>
+<div class="holographic-border rounded-lg p-8 text-center card-hover scroll-reveal bg-white bg-opacity-90">
+<div class="w-16 h-16 flex items-center justify-center mx-auto mb-4 text-3xl text-primary">
+<i class="ri-seedling-fill"></i>
+</div>
+<h3 class="text-2xl font-bold mb-4 gradient-text">"Sustainability, inclusivity, and clarity — that's my code."</h3>
+<p class="text-gray-600">
+Creating solutions that are environmentally responsible, accessible to all, and intuitively understandable.
+</p>
+</div>
+</div>
+<div class="mt-16 p-8 rounded-lg bg-gradient-to-r from-purple-50 to-indigo-50 shadow-sm scroll-reveal">
+<p class="text-lg text-center text-gray-700 leading-relaxed">
+I want to create a future where technology is not just functional — it's human. Whether it's in clean energy, AI, or mental health, I design for impact.
+</p>
+</div>
+</div>
+</section>
+<section id="achievements" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-12 text-center flex items-center justify-center">
+<span class="w-10 h-10 flex items-center justify-center text-primary mr-2">
+<i class="ri-award-line text-xl"></i>
+</span>
+<span>Achievements</span>
+</h2>
+<div class="max-w-3xl mx-auto">
+<div class="relative">
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-300 to-indigo-300"></div>
+<!-- Achievement 1 -->
+<div class="relative z-10 mb-12 scroll-reveal">
+<div class="flex items-center">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<i class="ri-trophy-line text-white text-xl"></i>
+</div>
+<div class="ml-6 glassmorphism rounded-lg p-6 shadow-md">
+<h3 class="text-xl font-bold mb-1 gradient-text">Finalist – MSME Women's Hackathon 2024</h3>
+<p class="text-gray-600 mb-2">Hydrocharger Project</p>
+<p class="text-sm text-gray-500">
+Selected among top 10 innovations from 5000+ submissions nationwide.
+</p>
+</div>
+</div>
+</div>
+<!-- Achievement 2 -->
+<div class="relative z-10 mb-12 scroll-reveal">
+<div class="flex items-center">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<i class="ri-medal-line text-white text-xl"></i>
+</div>
+<div class="ml-6 glassmorphism rounded-lg p-6 shadow-md">
+<h3 class="text-xl font-bold mb-1 gradient-text">Top 200 – Manthan Innovation Challenge</h3>
+<p class="text-gray-600 mb-2">Hydrocharger & Hertz EV Projects</p>
+<p class="text-sm text-gray-500">
+Recognized for sustainable energy solutions among 10,000+ entries.
+</p>
+</div>
+</div>
+</div>
+<!-- Achievement 3 -->
+<div class="relative z-10 mb-12 scroll-reveal">
+<div class="flex items-center">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<i class="ri-book-read-line text-white text-xl"></i>
+</div>
+<div class="ml-6 glassmorphism rounded-lg p-6 shadow-md">
+<h3 class="text-xl font-bold mb-1 gradient-text">Research Scholar – International EUMMAS Conference</h3>
+<p class="text-gray-600 mb-2">Sharjah, UAE</p>
+<p class="text-sm text-gray-500">
+Presented research paper on Syntagma AI applications in business strategy.
+</p>
+</div>
+</div>
+</div>
+<!-- Achievement 4 -->
+<div class="relative z-10 mb-12 scroll-reveal">
+<div class="flex items-center">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<i class="ri-star-line text-white text-xl"></i>
+</div>
+<div class="ml-6 glassmorphism rounded-lg p-6 shadow-md">
+<h3 class="text-xl font-bold mb-1 gradient-text">Ongoing – KSCST 2025</h3>
+<p class="text-gray-600 mb-2">Empath AI Project</p>
+<p class="text-sm text-gray-500">
+Working towards state-level innovation showcase for mental health technology.
+</p>
+</div>
+</div>
+</div>
+<!-- Achievement 6 -->
+<div class="relative z-10 scroll-reveal">
+<div class="flex items-center">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
+<i class="ri-community-line text-white text-xl"></i>
+</div>
+<div class="ml-6 glassmorphism rounded-lg p-6 shadow-md">
+<h3 class="text-xl font-bold mb-1 gradient-text">Student Coordinator</h3>
+<p class="text-gray-600 mb-2">GCU Incubation Hub, Garden City University</p>
+<p class="text-sm text-gray-500">
+Coordinating student innovation activities and entrepreneurship initiatives in 2025.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-3xl font-bold mb-4 text-center flex items-center justify-center">
+<span class="w-10 h-10 flex items-center justify-center text-primary mr-2">
+<i class="ri-mail-send-line text-xl"></i>
+</span>
+<span>Contact</span>
+</h2>
+<p class="text-xl text-center text-gray-600 mb-12">Let's build something powerful together.</p>
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2">
+<form class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Your name">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Your email">
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary" placeholder="Your message"></textarea>
+</div>
+<button type="submit" class="w-full py-3 bg-primary text-white font-medium !rounded-button shadow-lg hover:shadow-xl transition-all whitespace-nowrap">
+Send Message
+</button>
+</form>
+</div>
+<div class="md:w-1/2 flex flex-col justify-center">
+<div class="glassmorphism rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+<i class="ri-mail-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium">Email</h3>
+<a href="mailto:info@dionpower.in" class="text-primary hover:underline">info@dionpower.in</a>
+</div>
+</div>
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+<i class="ri-linkedin-fill text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium">LinkedIn</h3>
+<a href="https://www.linkedin.com/in/arpita-ribu-r-54b624234" target="_blank" class="text-primary hover:underline">arpita-ribu-r</a>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary">
+<i class="ri-github-fill text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-lg font-medium">GitHub</h3>
+<a href="https://github.com/arpitaribu" target="_blank" class="text-primary hover:underline">arpitaribu</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-2xl font-['Pacifico'] text-white">Arpita</a>
+<p class="mt-2 text-gray-400 max-w-md">
+Building the future through innovation and empathy. Tech entrepreneur focused on sustainable solutions.
+</p>
+</div>
+<div class="flex space-x-6">
+<a href="mailto:info@dionpower.in" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-mail-line"></i>
+</a>
+<a href="https://www.linkedin.com/in/arpita-ribu-r-54b624234" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="https://github.com/arpitaribu" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-github-fill"></i>
+</a>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© 2025 Arpita Ribu Ravindran. All rights reserved.
+</p>
+<div class="mt-4 md:mt-0 flex space-x-4 text-sm text-gray-400">
+<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
+const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+function checkScroll() {
+scrollRevealElements.forEach(element => {
+const elementTop = element.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (elementTop < windowHeight * 0.85) {
+element.classList.add('active');
+}
+});
+}
+// Initial check
+checkScroll();
+// Check on scroll
+window.addEventListener('scroll', checkScroll);
+// Orb animation
+const orb = document.querySelector('.orb');
+const orbContainer = document.querySelector('.orb-container');
+document.addEventListener('mousemove', function(e) {
+  const mouseX = e.clientX / window.innerWidth;
+  const mouseY = e.clientY / window.innerHeight;
+  const moveX = (mouseX - 0.5) * 40;
+  const moveY = (mouseY - 0.5) * 40;
+  const rotateX = (mouseY - 0.5) * 20;
+  const rotateY = (mouseX - 0.5) * -20;
+  
+  orbContainer.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  orb.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(30px) rotate3d(1, 1, 1, ${mouseX * 360}deg)`;
+});
+// Ripple effect on scroll
+const rippleEffect = document.querySelector('.ripple-effect');
+let lastScrollY = window.scrollY;
+let ripples = [];
+window.addEventListener('scroll', function() {
+  const scrollY = window.scrollY;
+  const scrollDelta = scrollY - lastScrollY;
+  
+  if (Math.abs(scrollDelta) > 5 && scrollY < window.innerHeight) {
+    createRipple(scrollDelta > 0);
+  }
+  
+  lastScrollY = scrollY;
+});
+function createRipple(scrollingDown) {
+  const ripple = document.createElement('div');
+  ripple.classList.add('ripple');
+  
+  const size = Math.random() * 100 + 50;
+  const x = Math.random() * window.innerWidth;
+  const y = scrollingDown ? window.innerHeight : 0;
+  
+  ripple.style.width = `${size}px`;
+  ripple.style.height = `${size}px`;
+  ripple.style.left = `${x}px`;
+  ripple.style.top = `${y}px`;
+  ripple.style.position = 'absolute';
+  ripple.style.borderRadius = '50%';
+  ripple.style.border = '2px solid rgba(138, 43, 226, 0.3)';
+  ripple.style.transform = 'scale(0)';
+  ripple.style.opacity = '1';
+  ripple.style.transition = 'all 2s cubic-bezier(0.165, 0.84, 0.44, 1)';
+  
+  rippleEffect.appendChild(ripple);
+  ripples.push(ripple);
+  
+  // Start animation
+  setTimeout(() => {
+    ripple.style.transform = 'scale(3)';
+    ripple.style.opacity = '0';
+  }, 10);
+  
+  // Remove after animation
+  setTimeout(() => {
+    if (ripple.parentNode) {
+      ripple.parentNode.removeChild(ripple);
+      ripples = ripples.filter(r => r !== ripple);
+    }
+  }, 2000);
+}
+// Create initial ripples
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => {
+    createRipple(Math.random() > 0.5);
+  }, i * 1000);
+}
+// Particle system
+const particles = document.querySelector('.particles');
+for (let i = 0; i < 50; i++) {
+const particle = document.createElement('div');
+particle.style.position = 'absolute';
+particle.style.width = '4px';
+particle.style.height = '4px';
+particle.style.backgroundColor = 'rgba(138, 43, 226, 0.2)';
+particle.style.borderRadius = '50%';
+particle.style.top = Math.random() * 100 + '%';
+particle.style.left = Math.random() * 100 + '%';
+const size = Math.random() * 4 + 2;
+particle.style.width = size + 'px';
+particle.style.height = size + 'px';
+const duration = Math.random() * 20 + 10;
+particle.style.animation = `float ${duration}s ease-in-out infinite`;
+particle.style.animationDelay = Math.random() * 10 + 's';
+particles.appendChild(particle);
+}
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+// Project card 3D effect
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+card.addEventListener('mousemove', function(e) {
+const rect = this.getBoundingClientRect();
+const x = e.clientX - rect.left; // x position within the element
+const y = e.clientY - rect.top; // y position within the element
+const centerX = rect.width / 2;
+const centerY = rect.height / 2;
+const deltaX = (x - centerX) / centerX;
+const deltaY = (y - centerY) / centerY;
+const imageContainer = this.querySelector('.project-image-container');
+imageContainer.style.transform = `rotateY(${deltaX * 10}deg) rotateX(${-deltaY * 10}deg)`;
+// Activate specific animations based on project type
+const projectType = this.getAttribute('data-project');
+if (projectType === 'empath') {
+const brainScan = this.querySelector('.brain-scan');
+const emotionDots = this.querySelectorAll('.emotion-dot');
+if (brainScan) brainScan.style.opacity = '1';
+emotionDots.forEach(dot => {
+dot.style.opacity = '1';
+});
+} else if (projectType === 'hydrocharger') {
+const waterDrops = this.querySelectorAll('.water-drop');
+const turbine = this.querySelector('.turbine-wheel');
+waterDrops.forEach(drop => {
+drop.style.opacity = '1';
+});
+if (turbine) turbine.style.opacity = '1';
+} else if (projectType === 'hertz') {
+const car = this.querySelector('.car-container');
+const waves = this.querySelectorAll('.charging-wave');
+if (car) car.style.opacity = '1';
+waves.forEach(wave => {
+wave.style.opacity = '1';
+});
+} else if (projectType === 'bms') {
+const battery = this.querySelector('.battery-container');
+const bolt = this.querySelector('.charge-bolt');
+if (battery) battery.style.opacity = '1';
+if (bolt) bolt.style.opacity = '1';
+} else if (projectType === 'vuelamp') {
+const lamp = this.querySelector('.lamp-container');
+const light = this.querySelector('.lamp-light');
+if (lamp) lamp.style.opacity = '1';
+if (light) light.style.opacity = '1';
+}
+});
+card.addEventListener('mouseleave', function() {
+const imageContainer = this.querySelector('.project-image-container');
+imageContainer.style.transform = 'rotateY(0deg) rotateX(0deg)';
+});
+});
+});
+</script>
+</body>
+</html>
